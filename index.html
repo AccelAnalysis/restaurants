@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Growth & Lead Generation | Accel Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Accel Analysis helps restaurants and food concepts use data, hyper-targeted direct mail, and strategic planning to grow traffic, catering, and profitability." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --aa-navy: #081528;
+      --aa-navy-soft: #0f223b;
+      --aa-gold: #f5b942;
+      --aa-light: #f5f7fb;
+      --aa-muted: #9aa4b4;
+      --aa-text: #101827;
+      --aa-border: #e1e5ef;
+      --aa-danger: #e75b5b;
+      --aa-radius-lg: 18px;
+      --aa-radius-md: 12px;
+      --aa-radius-sm: 8px;
+      --max-width: 1120px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--aa-text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout Helpers */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(8, 21, 40, 0.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      width: 40px;
+      height: auto;
+    }
+
+    .nav-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .nav-tagline {
+      font-size: 0.72rem;
+      color: rgba(226, 232, 240, 0.85);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: rgba(226, 232, 240, 0.9);
+    }
+
+    .nav-links a:hover {
+      color: var(--aa-gold);
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--aa-gold);
+      color: #1f2933;
+      box-shadow: 0 10px 25px rgba(245, 185, 66, 0.35);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-cta span.icon {
+      font-size: 1.1rem;
+    }
+
+    .nav-cta:hover {
+      filter: brightness(1.05);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(8, 21, 40, 0.94), rgba(10, 37, 64, 0.9)),
+        url("https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-02576cc.png/:/rs=w:1440,h:1440")
+          center/cover no-repeat;
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--aa-gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3.1vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: 1.02rem;
+      max-width: 32rem;
+      color: rgba(226, 232, 240, 0.92);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 999px;
+      padding: 0.35rem 0.95rem;
+      font-size: 0.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.25);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.96rem;
+      border: none;
+      cursor: pointer;
+      background: var(--aa-gold);
+      color: #111827;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary .icon {
+      font-size: 1.2rem;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.75);
+      color: rgba(226, 232, 240, 0.92);
+      background: rgba(15, 23, 42, 0.6);
+      cursor: pointer;
+    }
+
+    .btn-secondary .icon {
+      font-size: 1.1rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.85rem;
+      color: rgba(203, 213, 225, 0.95);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 0.7rem;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .hero-meta-value {
+      font-weight: 600;
+    }
+
+    .hero-image-card {
+      background: rgba(15, 23, 42, 0.82);
+      border-radius: 22px;
+      padding: 1.3rem 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-image {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      margin-bottom: 1rem;
+    }
+
+    .hero-image-caption {
+      font-size: 0.8rem;
+      color: rgba(203, 213, 225, 0.95);
+    }
+
+    .hero-badges {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.7rem;
+    }
+
+    .hero-badge {
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      color: rgba(226, 232, 240, 0.9);
+    }
+
+    /* Section Wrapper */
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--aa-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: var(--aa-navy-soft);
+    }
+
+    .section-sub {
+      font-size: 0.98rem;
+      color: var(--aa-muted);
+      max-width: 34rem;
+    }
+
+    /* Two Column */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.95rem;
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 2px solid #22c55e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #22c55e;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .check-icon span {
+      transform: translateY(-1px);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--aa-border);
+      background: #ffffff;
+      color: var(--aa-muted);
+    }
+
+    .image-frame {
+      border-radius: var(--aa-radius-lg);
+      padding: 0.6rem;
+      background: radial-gradient(circle at top left, #fef3c7, #eff6ff);
+      border: 1px solid var(--aa-border);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .image-inner {
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .image-caption {
+      font-size: 0.8rem;
+      color: var(--aa-muted);
+      margin-top: 0.7rem;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--aa-radius-md);
+      border: 1px solid var(--aa-border);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      background: rgba(17, 94, 163, 0.06);
+      color: var(--aa-navy-soft);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--aa-navy-soft);
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .card-tag {
+      font-size: 0.72rem;
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      background: var(--aa-light);
+      color: var(--aa-muted);
+    }
+
+    /* Steps / How It Works */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      border-radius: var(--aa-radius-md);
+      border: 1px solid var(--aa-border);
+      background: #ffffff;
+      padding: 1.3rem 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(8, 21, 40, 0.08);
+      color: var(--aa-navy-soft);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--aa-navy-soft);
+    }
+
+    .step-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* Highlight Section */
+    .highlight {
+      background: var(--aa-light);
+    }
+
+    .highlight-inner {
+      background: linear-gradient(135deg, #0b1120, #111827);
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      color: #e5e7eb;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: center;
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.4);
+    }
+
+    .highlight-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .highlight-sub {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      margin-bottom: 1.2rem;
+    }
+
+    .highlight-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .highlight-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .highlight-metric span.value {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--aa-gold);
+    }
+
+    .highlight-secondary {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem 1.3rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .highlight-secondary h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--aa-gold);
+    }
+
+    /* CTA Footer */
+    .bottom-cta {
+      text-align: center;
+      padding: 3rem 0 3.5rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 1.5rem;
+    }
+
+    .bottom-cta h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--aa-navy-soft);
+    }
+
+    .bottom-cta p {
+      font-size: 0.95rem;
+      color: var(--aa-muted);
+      max-width: 32rem;
+      margin: 0 auto 1.6rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.4rem 0 1.7rem;
+      background: #ffffff;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--aa-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--aa-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--aa-navy-soft);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .hero-image-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .highlight-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 2.7rem 0 2.4rem;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .highlight-inner {
+        padding: 1.7rem 1.4rem;
+      }
+
+      .bottom-cta h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-f3ca1db.png/:/rs=w:166,h:200,cg:true,m/cr=w:166,h:200/qt=q:95"
+          alt="Accel Analysis logo"
+          class="nav-logo"
+        />
+        <div class="nav-title-group">
+          <span class="nav-title">Accel Analysis</span>
+          <span class="nav-tagline">Clarity. Strategy. Execution.</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="https://accelanalysis.com">Home</a>
+        <a href="https://accelanalysis.com/about">About</a>
+        <a href="https://accelanalysis.com/services-overview">Our Services</a>
+        <a href="https://accelanalysis.com/contact-us">Contact</a>
+        <a
+          href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+          class="nav-cta"
+        >
+          <span class="icon">📅</span>
+          <span>Book Discovery Call</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-kicker">For Restaurants & Food Concepts</div>
+        <h1 class="hero-title">
+          Turn local data into full tables, stronger tickets, and smarter growth.
+        </h1>
+        <p class="hero-sub">
+          Accel Analysis helps restaurants, cafés, and food concepts use data, mapping,
+          and hyper-targeted direct mail to drive more of the <strong>right</strong> guests in the door
+          &mdash; and keep them coming back.
+        </p>
+
+        <div class="hero-pill">
+          <div class="hero-pill-dot"></div>
+          <span>Clarity &middot; Strategy &middot; Execution for restaurant growth</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a
+            href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+            class="btn-primary"
+          >
+            <span class="icon"></span>
+            <span>Book a Restaurant Strategy Call</span>
+          </a>
+          <a href="#how-we-help" class="btn-secondary">
+            <span class="icon">👁️</span>
+            <span>See how we help restaurants</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">What we unlock</span>
+            <span class="hero-meta-value">High-value local guests, not random foot traffic</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">How we work</span>
+            <span class="hero-meta-value">Data-driven, location-aware, campaign-ready</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-image-card" aria-label="Restaurant growth illustration">
+        <div class="hero-image">
+          <!-- You can swap this placeholder for a real image (e.g. your radius map tool UI) -->
+          <img
+            src="https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/radius_point.png/:/rs=w:1440,h:1440"
+            alt="Example of restaurant trade area and radius analysis"
+          />
+        </div>
+        <p class="hero-image-caption">
+          We visualize the households, businesses, and neighborhoods around your restaurant
+          so you can target the guests most likely to visit, order again, and spend more.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">Hyper-targeted direct mail</span>
+          <span class="hero-badge">Delivery radius &amp; trade area strategy</span>
+          <span class="hero-badge">Catering &amp; B2B lead generation</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- WHY RESTAURANTS PARTNER -->
+  <section>
+    <div class="container two-column">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">Why restaurants work with us</div>
+          <h2 class="section-title">You don’t need more noise. You need the right guests.</h2>
+          <p class="section-sub">
+            Most restaurants are surrounded by potential regulars &mdash; but lack a clear,
+            data-backed way to reach them. Accel Analysis plugs in as your growth partner,
+            using local data, mapping, and direct mail to connect you with guests who fit
+            your concept and price point.
+          </p>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <div class="check-icon"><span>✓</span></div>
+            <div>Stop guessing where to send mailers, menus, and offers.</div>
+          </li>
+          <li>
+            <div class="check-icon"><span>✓</span></div>
+            <div>Align your delivery radius, catering footprint, and walkable trade area.</div>
+          </li>
+          <li>
+            <div class="check-icon"><span>✓</span></div>
+            <div>Run campaigns you can actually <strong>measure</strong> and improve round after round.</div>
+          </li>
+        </ul>
+        <div class="pill-row">
+          <span class="pill">Independent Restaurants</span>
+          <span class="pill">Multi-Unit Concepts</span>
+          <span class="pill">Fast Casual &amp; QSR</span>
+          <span class="pill">Coffee &amp; Dessert Bars</span>
+          <span class="pill">Ghost Kitchens</span>
+        </div>
+      </div>
+
+      <div class="image-frame">
+        <div class="image-inner">
+          <!-- Replace with a real interior/guest-focused photo if available -->
+          <img
+            src="https://img1.wsimg.com/blobby/go/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/video/restaurant_speeddining-e1dc0dd.mp4"
+            alt="Busy dining room with ideal restaurant guests"
+          />
+        </div>
+        <p class="image-caption">
+          We focus on filling your dining room and order queue with the guests most likely to
+          love your concept, not just whoever happens to see an ad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section id="how-we-help">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">How we help restaurants grow</div>
+        <h2 class="section-title">From neighborhood mapping to full-table campaigns.</h2>
+        <p class="section-sub">
+          Every engagement centers on three things: clarity on your ideal guests, smart
+          geography around your site, and campaigns that tie every piece together.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Hyper-Targeted Local Acquisition</h3>
+          </div>
+          <div class="card-body">
+            Define your <strong>ideal nearby guests</strong> by income, household type,
+            lifestyle, and proximity. Then we build lists and direct mail campaigns that
+            reach those people &mdash; not the entire ZIP code.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">New neighbors welcome offers</span>
+            <span class="card-tag">Slow-night boosters</span>
+            <span class="card-tag">Menu launch promos</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">🗺️</div>
+            <h3 class="card-title">Trade Area &amp; Delivery Radius Strategy</h3>
+          </div>
+          <div class="card-body">
+            We use radius rings and mapping to understand your true trade area, then line
+            that up with third-party delivery zones, EDDM routes, and on-the-ground tactics
+            like door hangers and flyers.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">Delivery footprint</span>
+            <span class="card-tag">Walkable radius</span>
+            <span class="card-tag">EDDM alignment</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">✉️</div>
+            <h3 class="card-title">Direct Mail Campaign Design &amp; Ops</h3>
+          </div>
+          <div class="card-body">
+            From campaign intake to postcard/menu design and print quantities, we handle
+            the heavy lifting. Every piece is wired for tracking with QR codes and
+            promo codes tied back to your campaign.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">Postcards &amp; menus</span>
+            <span class="card-tag">Offer strategy</span>
+            <span class="card-tag">Campaign tracking</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">🥗</div>
+            <h3 class="card-title">Menu, Offers &amp; Ticket-Size Strategy</h3>
+          </div>
+          <div class="card-body">
+            We analyze your sales mix to surface hero items, smart bundles, and upsell
+            paths. Then we fold those into mailers, digital menu boards, and in-store
+            signage to gently lift <strong>average ticket</strong>.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">Combos &amp; add-ons</span>
+            <span class="card-tag">Family bundles</span>
+            <span class="card-tag">Profitable promotions</span>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">🏢</div>
+            <h3 class="card-title">Catering &amp; B2B Pipelines</h3>
+          </div>
+          <div class="card-body">
+            We build lists of nearby offices, churches, schools, and communities, then
+            design campaigns to sell catering, team meals, and recurring orders that
+            smooth out your revenue.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">Office catering</span>
+            <span class="card-tag">Holiday events</span>
+            <span class="card-tag">Recurring orders</span>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title">Restaurant KPI Dashboards</h3>
+          </div>
+          <div class="card-body">
+            Simple, visual dashboards help you track sales by daypart, average ticket,
+            promo performance, and campaign ROI &mdash; without getting lost in spreadsheets.
+          </div>
+          <div class="card-tags">
+            <span class="card-tag">Daypart sales</span>
+            <span class="card-tag">Promo performance</span>
+            <span class="card-tag">Campaign ROI</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL MENU / IN-STORE & SITE SELECTION HIGHLIGHT -->
+  <section class="highlight">
+    <div class="container">
+      <div class="highlight-inner">
+        <div>
+          <h3 class="highlight-title">Digital menu boards &amp; future locations, tied to the same strategy.</h3>
+          <p class="highlight-sub">
+            With Accel Analysis, the story doesn’t stop at your first campaign. We help
+            you keep your in-store messaging, online presence, and expansion plans aligned
+            to the same data-driven picture of your market.
+          </p>
+          <div class="highlight-metrics">
+            <div class="highlight-metric">
+              <span class="value">1</span>
+              <span>Central strategy for mailers, menus &amp; digital screens</span>
+            </div>
+            <div class="highlight-metric">
+              <span class="value">Data-led</span>
+              <span>Site selection support for your next location</span>
+            </div>
+            <div class="highlight-metric">
+              <span class="value">Ongoing</span>
+              <span>Testing &amp; iteration as your concept grows</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-secondary">
+          <h4>In-store &amp; expansion support</h4>
+          <ul class="bullet-list" style="margin-top: 0.2rem;">
+            <li>
+              <div class="check-icon"><span>✓</span></div>
+              <div>Digital menu and promo screens that you can update without reprinting.</div>
+            </li>
+            <li>
+              <div class="check-icon"><span>✓</span></div>
+              <div>Location analysis to compare potential sites using households, income, and competitors.</div>
+            </li>
+            <li>
+              <div class="check-icon"><span>✓</span></div>
+              <div>Playbooks so your team can run campaigns again and again without starting from scratch.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Working with Accel Analysis</div>
+        <h2 class="section-title">Simple, structured, restaurant-ready.</h2>
+        <p class="section-sub">
+          We keep the process focused so your leadership and staff can stay on operations,
+          while we architect the growth engine around your restaurant.
+        </p>
+      </div>
+
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Discovery &amp; Concept Fit</h3>
+          <p class="step-body">
+            We review your concept, menu, pricing, and current traffic. Together we clarify
+            your ideal guests and what “success” looks like: more lunch traffic, better
+            evening tickets, catering, or a mix.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Trade Area &amp; Campaign Design</h3>
+          <p class="step-body">
+            Using your location, we analyze the surrounding households and businesses,
+            build priority radius rings, and recommend specific campaigns with offers,
+            quantities, and timelines.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Launch, Track &amp; Iterate</h3>
+          <p class="step-body">
+            We help you launch the campaign, track redemptions and response, and adjust
+            radius, messaging, and offers based on real results &mdash; not guesses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2>Ready to see the hidden potential around your restaurant?</h2>
+      <p>
+        Whether you’re an independent spot, a growing concept, or planning your next
+        location, Accel Analysis can help you turn local data into a clear, actionable
+        growth plan.
+      </p>
+      <a
+        href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+        class="btn-primary"
+      >
+        <span class="icon">📅</span>
+        <span>Book a Restaurant Strategy Call</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Accel Analysis, LLC. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://accelanalysis.com/about">About</a>
+        <a href="https://accelanalysis.com/services-overview">Services</a>
+        <a href="https://accelanalysis.com/contact-us">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Simple year auto-update
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
